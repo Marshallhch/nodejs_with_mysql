@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { sequelize } = require("./database");
 const globalStatController = require("./controller/global-stat.controller");
+const keyValueConroller = require("./controller/key-value.controller");
 
 async function launchServer() {
   const app = express(); // 익스프레스 인스턴스 생성
@@ -14,6 +15,10 @@ async function launchServer() {
   app.get("/global-stats", globalStatController.getAll);
   app.post("/global-stats", globalStatController.insertOrUpdate);
   app.delete("/global-stats", globalStatController.remove);
+
+  app.get("/key-value/:key", keyValueController.get);
+  app.post("/key-value", keyValueConroller.insertOrUpdate);
+  app.delete("/key-value/:key", keyValueConroller.remove);
 
   try {
     await sequelize.sync();

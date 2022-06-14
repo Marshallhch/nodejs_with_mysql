@@ -40,6 +40,13 @@
  --data-raw '{"cc":"KR", "date":"2020-12-12", "confirm":28, "death":0, "negative":6676, "released":7, "tested":7678, "testing":535}'
 ```
 
+### 4. Create Global API
+
+- Define Object Model Using Sequelize
+- Add 'KeyValue' Object Model in database/index.js
+- Write Controller Code
+- Connect Router
+
 ### N. Trouble Shutting
 
 - Issue No.1:
